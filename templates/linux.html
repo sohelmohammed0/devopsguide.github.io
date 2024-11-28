@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card mb-4 gradient-header-primary text-white p-4">
+    <h1 class="main-title">Linux Command Line & System Administration</h1>
+    <p style="text-align: center;">Master the essentials of system management and operations using Linux.</p>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header gradient-header-red text-white">
+        <h3 class="section-title">Comprehensive Guide to Linux</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Linux</strong> is a powerful and versatile operating system widely used in servers, development environments, and cloud infrastructure. This guide will introduce you to essential Linux commands, system administration practices, and best practices to manage and automate tasks on Linux systems efficiently.</p>
+
+        <h4 class="text-primary mt-4 mb-3"><i class="fas fa-terminal"></i>What is Linux</h4>
+        <p>Linux is an open-source operating system based on the Unix architecture. It is known for its stability, security, and scalability, making it a preferred choice for servers, networking, and DevOps. Linux is also used in various distributions like Ubuntu, CentOS, Red Hat, and Debian.</p>
+
+        <h4 class="text-primary mt-4 mb-3"><i class="fas fa-terminal"></i> Why learn Linux</h4>
+        <p>Mastering Linux is essential for system administrators, developers, and DevOps engineers. Linux offers powerful tools for automation, system configuration, and package management. It’s widely used in cloud computing, infrastructure management, and is the backbone of many CI/CD pipelines.</p>
+
+        <h4 class="text-highlight mt-4 mb-3"><i class="fas fa-tools"></i> Basic Linux Commands:</h4>
+        <ul class="styled-list">
+            <li class="list-group-item"><code>ls</code> - Lists files and directories in the current directory.</li>
+            <li class="list-group-item"><code>cd &lt;directory&gt;</code> - Changes the current directory to the specified one.</li>
+            <li class="list-group-item"><code>mkdir &lt;directory&gt;</code> - Creates a new directory.</li>
+            <li class="list-group-item"><code>touch &lt;file name&gt;</code> - Creates an empty file.</li>
+            <li class="list-group-item"><code>rm &lt;file&gt;</code> - Deletes a file (use <code>-r</code> for directories).</li>
+            <li class="list-group-item"><code>cp &lt;source&gt; &lt;destination&gt;</code> - Copies a file or directory.</li>
+            <li class="list-group-item"><code>mv &lt;source&gt; &lt;destination&gt;</code> - Moves or renames files and directories.</li>
+            <li class="list-group-item"><code>cat &lt;file&gt;</code> - Displays the content of a file.</li>
+        </ul>
+
+        <h4 class="text-highlight mt-4 mb-3"><i class="fas fa-tools"></i> Intermediate Commands:</h4>
+        <ul class="styled-list">
+
+            <li class="list-group-item"><code>chmod &lt;permissions&gt; &lt;file name&gt;</code> - Changes the permissions of a file or directory.</li>
+            <li class="list-group-item"><code>chown &lt;user&gt;:&lt;group&gt; &lt;file&gt;</code> - Changes the owner and group of a file or directory.</li>
+            <li class="list-group-item"><code>grep &lt;pattern&gt; &lt;file&gt;</code> - Searches for a pattern in files and displays matching lines.</li>
+            <li class="list-group-item"><code>find &lt;directory&gt; -name &lt;filename&gt;</code> - Searches for files in a directory hierarchy.</li>
+            <li class="list-group-item"><code>ps aux</code> - Displays a snapshot of all running processes.</li>
+            <li class="list-group-item"><code>kill &lt;pid&gt;</code> - Terminates a process by its Process ID (PID).</li>
+        </ul>
+
+        <h4 class="text-highlight mt-4 mb-3"><i class="fas fa-tools"></i> Advanced Linux Topics:</h4>
+        <ul>
+            <li><strong>Bash Scripting:</strong> Automate tasks and manage repetitive tasks using shell scripts. <a href="https://tldp.org/LDP/abs/html/" class="btn btn-info">Learn Bash Scripting</a></li>
+            <li><strong>User Management:</strong> Manage users and groups, permissions, and security. <a href="https://linux.die.net/man/1/useradd" class="btn btn-info">User Management Documentation</a></li>
+            <li><strong>Package Management:</strong> Use <code>apt</code> (for Debian/Ubuntu) or <code>yum</code> (for Red Hat/CentOS) to manage software. <a href="https://linuxize.com/post/how-to-use-apt-command/" class="btn btn-info">APT Package Management</a></li>
+            <li><strong>System Monitoring:</strong> Monitor system performance with <code>top</code>, <code>htop</code>, and <code>df</code> for disk usage. <a href="https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/" class="btn btn-info">System Monitoring Tools</a></li>
+            <li><strong>Firewall Configuration:</strong> Manage firewall rules using <code>ufw</code> (Uncomplicated Firewall) or <code>iptables</code>. <a href="https://help.ubuntu.com/community/UFW" class="btn btn-info">UFW Documentation</a></li>
+        </ul>
+
+        <h4 class="text-highlight mt-4 mb-3"><i class="fas fa-tools"></i> Step-by-Step Guide to Linux:</h4>
+        <ol>
+            <li><strong>Install Linux:</strong> Set up a Linux distribution (e.g., Ubuntu) on your system or use a virtual machine. <a href="https://ubuntu.com/download/desktop" class="btn btn-info">Ubuntu Downloads</a></li>
+            <li><strong>Explore the File System:</strong> Navigate through directories using <code>ls</code>, <code>cd</code>, and manage files with <code>touch</code>, <code>mkdir</code>, and <code>rm</code>.</li>
+            <li><strong>System Administration:</strong> Manage users, services, and processes using <code>useradd</code>, <code>service</code>, and <code>ps</code>.</li>
+            <li><strong>Package Management:</strong> Install and manage software using <code>apt</code> or <code>yum</code>. Try installing <code>nginx</code> or <code>apache2</code>.</li>
+            <li><strong>Automate Tasks:</strong> Write simple Bash scripts to automate file backups, process management, or network monitoring.</li>
+        </ol>
+
+        <h4 class="text-highlight mt-4 mb-3"><i class="fas fa-tools"></i> Hands-On Practice Sets:</h4>
+        <ul>      
+            <li>Create and manage users, assign them specific permissions using - <code>chmod</code> and <code>chown</code>.</li>
+            <li>Install a web server (like Nginx) and configure it to serve a static website.</li>
+            <li>Write a Bash script to automate file backups at specific intervals.</li>
+            <li>Set up a cron job to run your Bash script periodically.</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #1e1e1e;
+        color: #6f92c7;
+    }
+
+    .card {
+        background-color: #292929;
+        color: #d1d5db;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        color: #9c2121;
+        font-weight: 750;
+    }
+
+    h3 {
+        font-size: 2rem;
+        text-align: center;
+        color: #5ef838;
+    }
+
+    .text-highlight {
+        color: #62960e;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .card-header {
+        background-color: #cf1913;
+        color: #fff;
+    }
+
+    p, ul, ol {
+        
+        line-height: 1.6;
+    }
+
+    .styled-list li, .card-body ol li {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .btn {
+        background-color: #38bdf8;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 12px;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background-color: #0284c7;
+    }
+</style>
+
+{% endblock %}

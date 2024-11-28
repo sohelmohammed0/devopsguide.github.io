@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Kubernetes & Orchestration </h1>
+<div class="card">
+    <div class="card-header bg-success text-white">
+        <h3>Mastering Kubernetes Commands & Best Practices</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Kubernetes</strong> (K8s) is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides essential tools to manage microservices architectures, offering features like service discovery, load balancing, self-healing, and automated rollouts and rollbacks.</p>
+
+        <h4>Core Concepts:</h4>
+        <ul>
+            <li><strong>Pod:</strong> The smallest deployable unit in Kubernetes, representing one or more containers.</li>
+            <li><strong>Service:</strong> Defines a logical set of Pods and a policy by which to access them.</li>
+            <li><strong>Deployment:</strong> Manages the creation and scaling of Pods, ensuring they stay running.</li>
+            <li><strong>Namespace:</strong> A way to divide resources in a Kubernetes cluster, improving organization and security.</li>
+            <li><strong>Node:</strong> A worker machine in Kubernetes that runs containerized applications.</li>
+        </ul>
+
+        <h4>Essential Kubernetes Commands:</h4>
+        <ul>
+            <li><code>kubectl get pods</code> - List all running pods in the current namespace, showing their status.</li>
+            <li><code>kubectl describe pod &lt;pod_name&gt;</code> - Show detailed information about a specific pod, including events and conditions.</li>
+            <li><code>kubectl apply -f &lt;file&gt;.yaml</code> - Apply a YAML configuration file to create or update resources like Pods, Deployments, and Services.</li>
+            <li><code>kubectl delete pod &lt;pod_name&gt;</code> - Remove a specific pod from the cluster.</li>
+            <li><code>kubectl get services</code> - Display all services running in the cluster, showing IPs and exposed ports.</li>
+        </ul>
+
+        <h4>Advanced Kubernetes Commands:</h4>
+        <ul>
+            <li><code>kubectl rollout restart deployment &lt;deployment_name&gt;</code> - Restart a deployment to update all Pods with the latest configuration.</li>
+            <li><code>kubectl get nodes</code> - List all nodes in the cluster, showing their status, resources, and conditions.</li>
+            <li><code>kubectl exec -it &lt;pod_name&gt; -- /bin/bash</code> - Start a shell session inside a running container in a pod, useful for debugging.</li>
+            <li><code>kubectl logs &lt;pod_name&gt;</code> - Retrieve the logs of a specific pod for debugging purposes.</li>
+            <li><code>kubectl top nodes</code> - Display resource (CPU/memory) usage statistics for each node.</li>
+            <li><code>kubectl top pods</code> - Show resource usage of all running pods in the cluster.</li>
+            <li><code>kubectl expose deployment &lt;deployment_name&gt; --type=NodePort --port=8080</code> - Expose a deployment as a service on a specific port.</li>
+        </ul>
+
+        <h4>Scaling & Managing Kubernetes:</h4>
+        <ul>
+            <li><code>kubectl scale deployment &lt;deployment_name&gt; --replicas=3</code> - Scale the number of replicas (pods) for a deployment.</li>
+            <li><code>kubectl autoscale deployment &lt;deployment_name&gt; --min=1 --max=10 --cpu-percent=80</code> - Set up autoscaling based on CPU utilization.</li>
+            <li><code>kubectl delete deployment &lt;deployment_name&gt;</code> - Delete a deployment, removing all its pods.</li>
+        </ul>
+
+        <h4>Rich Resources for Learning Kubernetes:</h4>
+        <ul>
+            <li><a href="https://kubernetes.io/docs/" class="btn btn-primary">Official Kubernetes Documentation</a></li>
+            <li><a href="https://kubernetes.io/docs/tutorials/" class="btn btn-primary">Kubernetes Tutorials</a></li>
+            <li><a href="https://www.katacoda.com/courses/kubernetes" class="btn btn-primary">Katacoda: Kubernetes Interactive Scenarios</a></li>
+            <li><a href="https://www.udemy.com/course/kubernetes-the-complete-guide/" class="btn btn-primary">Udemy: Kubernetes Mastery</a></li>
+            <li><a href="https://www.kube.academy/" class="btn btn-primary">Kube Academy</a></li>
+        </ul>
+
+        <h4>Practice Sets:</h4>
+        <ul>
+            <li><strong>Basic:</strong> Create a new pod and expose it via a service, then inspect logs and debug the pod.</li>
+            <li><strong>Intermediate:</strong> Create a deployment with multiple replicas and use autoscaling based on CPU utilization.</li>
+            <li><strong>Advanced:</strong> Configure a multi-container pod with sidecar patterns, set up secrets, and use a config map for environment variables.</li>
+        </ul>
+
+        <h4>Best Practices for Kubernetes:</h4>
+        <ul>
+            <li><strong>Use Namespaces:</strong> Organize resources by teams or projects to isolate environments and control access.</li>
+            <li><strong>Keep Configurations as Code:</strong> Store YAML files in version control to track changes and rollback easily.</li>
+            <li><strong>Set Resource Limits:</strong> Define CPU and memory limits for each pod to prevent resource exhaustion.</li>
+            <li><strong>Monitor and Observe:</strong> Use tools like Prometheus, Grafana, and Kubernetes dashboard to keep an eye on resource usage and application health.</li>
+            <li><strong>Use Rolling Updates:</strong> Ensure zero downtime by using Kubernetes rolling updates during deployments.</li>
+            <li><strong>Leverage Helm:</strong> Use Helm charts to deploy complex applications with a single command.</li>
+        </ul>
+    </div>
+</div>
+
+</main>
+
+<style>
+    h1 {
+       color: #134bcf;
+       text-align: center;
+       font-size: 3.3rem;
+   
+   }
+   
+   body {
+       font-family: 'Poppins', sans-serif;
+       background-color: #1c2541;
+       color: #edf2f4;
+   }
+
+   .main-title {
+       font-size: 3rem;
+       text-align: center;
+       margin: 30px 0;
+       color: #f5f3f4;
+       text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+   }
+
+   .card {
+       background-color: #2b2d42;
+       padding: 20px;
+       border-radius: 10px;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+   }
+
+   .gradient-header-blue { background: linear-gradient(90deg, #2980b9, #6dd5fa); }
+   .gradient-header-green { background: linear-gradient(90deg, #43a047, #8bc34a); }
+   .gradient-header-yellow { background: linear-gradient(90deg, #fbc02d, #ffa000); }
+   .gradient-header-primary { background: linear-gradient(90deg, #007bff, #00bcd4); }
+   .gradient-header-red { background: linear-gradient(90deg, #d32f2f, #e57373); }
+   
+   .section-title {
+       color: #ffdd57;
+       font-size: 1.5rem;
+   }
+
+   .styled-list {
+       list-style: none;
+       padding: 0;
+       font-size: 1.1rem;
+   }
+
+   .styled-list li {
+       padding: 10px;
+       background: #3a3d5a;
+       border-radius: 5px;
+       margin-bottom: 10px;
+       color: #b0bec5;
+   }
+
+   .styled-list li code {
+       background: rgba(255, 255, 255, 0.1);
+       padding: 3px 6px;
+       border-radius: 3px;
+   }
+
+   pre {
+       background: #3a3d5a;
+       color: #ffffff;
+       padding: 10px;
+       border-radius: 5px;
+   }
+</style>
+
+{% endblock %}
